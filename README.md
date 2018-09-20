@@ -113,6 +113,10 @@ $post->workflow_can('to_review'); // False
 foreach ($post->workflow_transitions() as $transition) {
     echo $transition->getName();
 }
+// if more than one workflow is defined for the BlogPost class
+foreach ($post->workflow_transitions($workflowName) as $transition) {
+    echo $transition->getName();
+}
 
 // Apply a transition
 $post->workflow_apply('publish');
