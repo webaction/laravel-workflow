@@ -88,6 +88,7 @@ class WorkflowRegistry
     public function addFromArray($name, array $workflowData)
     {
         $builder = new DefinitionBuilder($workflowData['places']);
+        $transitionsMetadata = new \SplObjectStorage();
 
         foreach ($workflowData['transitions'] as $transitionName => $transition) {
             if (!is_string($transitionName)) {
@@ -95,7 +96,11 @@ class WorkflowRegistry
             }
 
             foreach ((array)$transition['from'] as $form) {
-                $builder->addTransition(new Transition($transitionName, $form, $transition['to']));
+                $currentTransition = new Transition($transitionName, $form, $transition['to']);
+                $builder->addTransition($currentTransition);
+                if (isset($transition['metadata'])) {
+                    $transitionsMetadata->attach($currentTransition, $transition['metadata']);
+                }
             }
         }
 
