@@ -36,9 +36,9 @@ class WorkflowRegistry
     protected $dispatcher;
 
     /**
-     * WorkflowRegistry constructor
+     * WorkflowRegistry constructor.
      *
-     * @param  array $config
+     * @param array $config
      * @throws \ReflectionException
      */
     public function __construct(array $config)
@@ -56,10 +56,10 @@ class WorkflowRegistry
     }
 
     /**
-     * Return the $subject workflow
+     * Return the $subject workflow.
      *
-     * @param  object $subject
-     * @param  string $workflowName
+     * @param object $subject
+     * @param string $workflowName
      * @return Workflow
      */
     public function get($subject, $workflowName = null)
@@ -68,7 +68,7 @@ class WorkflowRegistry
     }
 
     /**
-     * Add a workflow to the subject
+     * Add a workflow to the subject.
      *
      * @param Workflow $workflow
      * @param string   $supportStrategy
@@ -81,8 +81,8 @@ class WorkflowRegistry
     /**
      * Add a workflow to the registry from array
      *
-     * @param  string $name
-     * @param  array  $workflowData
+     * @param string $name
+     * @param array  $workflowData
      * @throws \ReflectionException
      */
     public function addFromArray($name, array $workflowData)
@@ -95,7 +95,7 @@ class WorkflowRegistry
                 $transitionName = $transition['name'];
             }
 
-            foreach ((array)$transition['from'] as $form) {
+            foreach ((array) $transition['from'] as $form) {
                 $currentTransition = new Transition($transitionName, $form, $transition['to']);
                 $builder->addTransition($currentTransition);
                 if (isset($transition['metadata'])) {
@@ -115,12 +115,12 @@ class WorkflowRegistry
     }
 
     /**
-     * Return the workflow instance
+     * Return the workflow instance.
      *
-     * @param  String                $name
-     * @param  array                 $workflowData
-     * @param  Definition            $definition
-     * @param  MarkingStoreInterface $markingStore
+     * @param String                $name
+     * @param array                 $workflowData
+     * @param Definition            $definition
+     * @param MarkingStoreInterface $markingStore
      * @return Workflow
      */
     protected function getWorkflowInstance(
@@ -141,10 +141,11 @@ class WorkflowRegistry
     }
 
     /**
-     * Return the making store instance
+     * Return the making store instance.
      *
-     * @param  array $workflowData
+     * @param array $workflowData
      * @return MarkingStoreInterface
+     *
      * @throws \ReflectionException
      */
     protected function getMarkingStoreInstance(array $workflowData)
