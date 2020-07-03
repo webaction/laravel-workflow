@@ -148,9 +148,9 @@ class WorkflowRegistry
      * Return the making store instance.
      *
      * @param array $workflowData
-     * @return MarkingStoreInterface
-     *
      * @throws \ReflectionException
+     *
+     * @return MarkingStoreInterface
      */
     protected function getMarkingStoreInstance(array $workflowData)
     {
