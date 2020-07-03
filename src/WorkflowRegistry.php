@@ -104,6 +104,7 @@ class WorkflowRegistry
             }
         }
 
+        $builder->setMetadataStore(new InMemoryMetadataStore([], [], $transitionsMetadata));
         $definition = $builder->build();
         $markingStore = $this->getMarkingStoreInstance($workflowData);
         $workflow = $this->getWorkflowInstance($name, $workflowData, $definition, $markingStore);
