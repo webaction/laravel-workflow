@@ -39,6 +39,7 @@ class WorkflowRegistry
      * WorkflowRegistry constructor.
      *
      * @param array $config
+     *
      * @throws \ReflectionException
      */
     public function __construct(array $config)
@@ -60,6 +61,7 @@ class WorkflowRegistry
      *
      * @param object $subject
      * @param string $workflowName
+     *
      * @return Workflow
      */
     public function get($subject, $workflowName = null)
@@ -79,10 +81,11 @@ class WorkflowRegistry
     }
 
     /**
-     * Add a workflow to the registry from array
+     * Add a workflow to the registry from array.
      *
      * @param string $name
      * @param array  $workflowData
+     *
      * @throws \ReflectionException
      */
     public function addFromArray($name, array $workflowData)
@@ -117,10 +120,11 @@ class WorkflowRegistry
     /**
      * Return the workflow instance.
      *
-     * @param String                $name
+     * @param string                $name
      * @param array                 $workflowData
      * @param Definition            $definition
      * @param MarkingStoreInterface $markingStore
+     *
      * @return Workflow
      */
     protected function getWorkflowInstance(
