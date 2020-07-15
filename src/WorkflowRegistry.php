@@ -9,12 +9,12 @@ use Symfony\Component\Workflow\DefinitionBuilder;
 use Symfony\Component\Workflow\MarkingStore\MarkingStoreInterface;
 use Symfony\Component\Workflow\MarkingStore\MultipleStateMarkingStore;
 use Symfony\Component\Workflow\MarkingStore\SingleStateMarkingStore;
+use Symfony\Component\Workflow\Metadata\InMemoryMetadataStore;
 use Symfony\Component\Workflow\Registry;
 use Symfony\Component\Workflow\StateMachine;
 use Symfony\Component\Workflow\SupportStrategy\InstanceOfSupportStrategy;
 use Symfony\Component\Workflow\Transition;
 use Symfony\Component\Workflow\Workflow;
-use Symfony\Component\Workflow\Metadata\InMemoryMetadataStore;
 
 /**
  * @author Boris Koumondji <brexis@yahoo.fr>
